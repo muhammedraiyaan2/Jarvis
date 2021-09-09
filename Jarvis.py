@@ -63,6 +63,46 @@ while True:
     elif input1 == "open edge":
         speak("Opening microsoft edge")
         os.startfile("C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe")
+    elif input1 == "open word":
+        speak("Opening microsoft word")
+        os.startfile("C:\\Users\\ASUS\Desktop\\Word 2016.lnk")
+    elif input1 == "open excel":
+        speak("Opening microsoft excel")
+        os.startfile("C:\\Users\\ASUS\Desktop\\Excel 2016.lnk")
+    elif input1 == "open power point":
+        speak("Opening microsoft power point")
+        os.startfile("C:\\Users\\ASUS\Desktop\\PowerPoint 2016.lnk")
+    elif input1 == "open repl":
+        speak("Opening repl")
+        web("replit.com/repls")
+    elif input1 == "open notepad":
+        speak("Opening notepad")
+        os.startfile("C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\Accessories\\Notepad.lnk")
+    elif input1 == "open wordpad":
+        speak("Opening wordpad")
+        os.startfile("C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\Accessories\\Wordpad.lnk")
+    elif input1 == "open paint":
+        speak("Opening paint")
+        os.startfile("C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\Accessories\\Paint.lnk")
+    elif input1 == "open cmd":
+        speak("Opening command prompt")
+        os.startfile("C:\\Users\\ASUS\\AppData\\Roaming\\Microsoft\Windows\\Start Menu\\Programs\\System Tools\\Command Prompt.lnk")
+    elif input1 == "open cmd":
+        speak("Opening control panel")
+        os.startfile("C:\\Users\\ASUS\\AppData\\Roaming\\Microsoft\Windows\\Start Menu\\Programs\\System Tools\\Control Panel.lnk")
+    elif input1 == "open run":
+        speak("Opening run")
+        os.startfile("C:\\Users\\ASUS\\AppData\\Roaming\\Microsoft\Windows\\Start Menu\\Programs\\System Tools\\Run.lnk")
+    elif input1 == "open this pc":
+        speak("Opening this pc")
+        os.startfile("C:\\Users\\ASUS\\AppData\\Roaming\\Microsoft\Windows\\Start Menu\\Programs\\System Tools\\computer.lnk")
+    elif input1 == "open powershell":
+        speak("Opening powershell")
+        os.startfile("C:\\Users\\ASUS\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Windows PowerShell\Windows PowerShell.lnk")
+    elif input1 == "search youtube":
+        input11=input("Enter the search for youtube: ")
+        speak("Searching "+input11)
+        web("youtube.com/results?search_query="+input11)
     elif input1 == "open dist":
         speak("Opening dist")
         os.startfile("D:\\coding\\Python\\dist")
