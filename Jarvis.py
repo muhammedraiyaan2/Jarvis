@@ -237,6 +237,34 @@ while True:
     elif input1 == "open google hangouts":
         speak("Opening google hangouts")
         web("hangouts.google.com")
+    elif input1 == "what is the date today":
+        speak("The date is ")
+        speak(datetime.datetime.now())
+    elif input1 == "what is the date":
+        speak("The date is ")
+        speak(datetime.datetime.now())
+    elif input1 == "what is date today":
+        speak("The date is ")
+        speak(datetime.datetime.now())
+    elif input1 == "remover":
+        print("Hi welcome to remover")
+        input5 = input("Enter the path where you have to remove the file: ")
+        os.remove(input5)
+    elif input1 == "writter":
+        print("Hi Welcome to the writer software")
+        input6 = input("Enter the path: ")
+        input7 = input("Enter the text: ")
+        root1 = open(input6, "a")
+        root1.write(input7)
+        root1.close()
+    elif input1 == "lists":
+        print("Welcome to lists")
+        input8 = input("Enter the path: ")
+        print(os.listdir(input8))
+    elif input1 == "creater":
+        print("Welcome to the creater")
+        input9 = input("Enter the path: ")
+        root2 = open(input9, "x")
     elif input1 == "search wikipedia":
         input3=input("Enter the word to search: ")
         speak("Searching wikipedia...")
