@@ -239,13 +239,14 @@ while True:
         web("hangouts.google.com")
     elif input1 == "what is the date today":
         speak("The date is ")
-        speak(datetime.datetime.now())
+        speak(datetime.datetime.now().date()
+              )
     elif input1 == "what is the date":
         speak("The date is ")
-        speak(datetime.datetime.now())
+        speak(datetime.datetime.now().date())
     elif input1 == "what is date today":
         speak("The date is ")
-        speak(datetime.datetime.now())
+        speak(datetime.datetime.now().date())
     elif input1 == "remover":
         print("Hi welcome to remover")
         input5 = input("Enter the path where you have to remove the file: ")
@@ -257,6 +258,18 @@ while True:
         root1 = open(input6, "a")
         root1.write(input7)
         root1.close()
+    elif input1 == "random choice":
+        # here I imported random libary
+        print("Welcome to the random choice")
+        rn = int(input("Enter the number of things: "))
+        # rn is the input range of things
+        for rn in range(0, rn):
+            things = input("Enter the thing: ")
+            # And i am aadding for loop range 0 to rn input and i take input from the user for rn times
+        random = random.randint(0, rn)
+        # And i adding the random and randint to think a number between 1 to rn
+        print(random)
+        # And finally i printed the output
     elif input1 == "lists":
         print("Welcome to lists")
         input8 = input("Enter the path: ")
@@ -273,6 +286,9 @@ while True:
         input4 = input("Enter the link to open: ")
         speak("Opening..."+input4)
         web(input4)
+    elif input1 == "speak":
+        input10=input("Enter the text to speak: ")
+        speak(input10)
     elif input1 == "calculator":
         # here i print some message
         print("Welcome to the calculator")
