@@ -1,4 +1,5 @@
 import os
+import time
 import pyttsx3
 import datetime
 import webbrowser
@@ -8,6 +9,7 @@ engine=pyttsx3.init('sapi5')
 voices=engine.getProperty('voices')
 engine.setProperty("voice",voices[0].id)
 def speak(audio):
+    """This function speak and say some thing that you want to be say to him"""
     engine.say(audio)
     engine.runAndWait()
     print("Jarvis:",audio)
@@ -39,6 +41,7 @@ def wishMe():
     else:
         speak("Good Evening Muhammad Raiyaan sir")
 def web(url):
+    """This function open the website in chrome with the url you don't have to add any https for link you can use like web("youtube.com")"""
     webbrowser.register('chrome', None,webbrowser.BackgroundBrowser("C:\\Program Files\\Google\Chrome\\Application\\chrome.exe"))
     webbrowser.get('chrome').open("https://"+url)
 wishMe()
@@ -46,7 +49,7 @@ while True:
     input1=input("You: ")
 # programs
     if input1 == "open google":
-        speak("Opening google")
+        speak("Opening chorme")
         os.startfile("C:\\Program Files\\Google\Chrome\\Application\\chrome.exe")
     elif input1 == "open vs code":
         speak("Opening vs code")
@@ -116,6 +119,15 @@ while True:
     elif input1 == "open coding":
         speak("Opening coding folder")
         os.startfile("D:\\coding")
+    elif input1 == "open task manager":
+        speak("Opening task manager")
+        os.startfile("C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\System Tools\\Task Manager.lnk")
+    elif input1 == "check the performance":
+        speak("Checking the computer performance")
+        os.startfile("C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\System Tools\\Task Manager.lnk")
+    elif input1 == "check performance":
+        speak("Checking the computer performance")
+        os.startfile("C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\System Tools\\Task Manager.lnk")
     # website
     elif input1 == "open youtube":
         speak("Opening youtube")
@@ -226,7 +238,7 @@ while True:
         speak("Opening header link")
         web("muhammedraiyaan2.github.io/header-link")
     # google
-    elif input1 == "open google.com":
+    elif input1 == "open google":
         speak("Opening google")
         web("google.com")
     elif input1 == "open google fonts":
@@ -289,15 +301,22 @@ while True:
         speak(datetime.datetime.now().date())
     elif input1 == "remover":
         print("Hi welcome to remover")
+        speak("Enter the path where you have to remove the file")
         input5 = input("Enter the path where you have to remove the file: ")
+        time.sleep(2)
+        speak("Removed succesfully")
         os.remove(input5)
     elif input1 == "writter":
         print("Hi Welcome to the writer software")
+        speak("Enter the path")
         input6 = input("Enter the path: ")
+        speak("Enter the text")
         input7 = input("Enter the text: ")
         root1 = open(input6, "a")
         root1.write(input7)
         root1.close()
+        time.sleep(2)
+        speak("Succesfully")
     elif input1 == "random choice":
         # here I imported random libary
         print("Welcome to the random choice")
@@ -312,41 +331,53 @@ while True:
         # And finally i printed the output
     elif input1 == "lists":
         print("Welcome to lists")
+        speak("Enter the path")
         input8 = input("Enter the path: ")
         print(os.listdir(input8))
     elif input1 == "creater":
         print("Welcome to the creater")
+        speak("Enter the path")
         input9 = input("Enter the path: ")
         root2 = open(input9, "x")
+        root2.close()
+        time.sleep(2)
+        speak("Succesfully created")
     elif input1 == "search wikipedia":
+        speak("Enter the word to search")
         input3=input("Enter the word to search: ")
-        speak("Searching wikipedia...")
+        speak(f"Searching {input3} wikipedia")
         web("en.wikipedia.org/wiki/"+input3)
     elif input1 == "open":
+        speak("Enter the link to open")
         input4 = input("Enter the link to open: ")
-        speak("Opening..."+input4)
+        speak(f"Opening {input4}")
         web(input4)
     elif input1 == "speak":
+        speak("Enter the text to speak: ")
         input10=input("Enter the text to speak: ")
         speak(input10)
     elif input1 == "calculator":
         # here i print some message
         print("Welcome to the calculator")
+        speak("Enter the first number: ")
         a = int(input("Enter the first number: "))
+        speak("Enter the second number: ")
         b = int(input("Enter the second number: "))
         # here I take two input from the user and save the input a vairable int
-        print("The addition of the two numbers is", a + b)
-        print("the subraction of two number is", a - b)
-        print("the multipltion of two number is", a * b)
-        print("the division of two number is", a / b)
+        speak(f"The addition of the two numbers is {a + b}")
+        speak(f"the subraction of two number is {a - b}")
+        speak(f"the multipltion of two number is {a * b}")
+        speak(f"the division of two number is { a / b}")
     elif input1 == "search":
+        speak("Enter the word to search: ")
         input2=input("Enter the word to search: ")
-        speak("Searching...")
+        speak(f"Searching {input2}")
         web("google.com/search?q="+input2+"&rlz=1C1GCEA_enSA966SA966&oq=s&aqs=chrome..69i57j0i131i433i512j46i131i199i433i465i512j69i60l4j69i61.1764j0j7&sourceid=chrome&ie=UTF-8")
     elif input1 == "hi jarvis":
         speak("Hi Muhammad Raiyaan sir")
     elif input1 == "who are you":
         speak("I am Jarvis")
     else:
-        speak("Sir didn't get try again")
+        arra=["Sir didn't get try again",f"No result for {input1}"]
+        speak(random.choice(arra))
 
