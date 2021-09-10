@@ -1,9 +1,12 @@
 import os
+import sys
 import time
 import pyttsx3
 import datetime
 import webbrowser
 import random
+import pyjokes
+import wikipedia
 # import speech_recognition as sr
 engine=pyttsx3.init('sapi5')
 voices=engine.getProperty('voices')
@@ -44,6 +47,16 @@ def web(url):
     """This function open the website in chrome with the url you don't have to add any https for link you can use like web("youtube.com")"""
     webbrowser.register('chrome', None,webbrowser.BackgroundBrowser("C:\\Program Files\\Google\Chrome\\Application\\chrome.exe"))
     webbrowser.get('chrome').open("https://"+url)
+class bcolors:
+    HEADER = '\033[95m'
+    OKBLUE = '\033[94m'
+    OKCYAN = '\033[96m'
+    OKGREEN = '\033[92m'
+    WARNING = '\033[93m'
+    FAIL = '\033[91m'
+    ENDC = '\033[0m'
+    BOLD = '\033[1m'
+    UNDERLINE = '\033[4m'
 wishMe()
 while True:
     input1=input("You: ")
@@ -90,7 +103,7 @@ while True:
     elif input1 == "open cmd":
         speak("Opening command prompt")
         os.startfile("C:\\Users\\ASUS\\AppData\\Roaming\\Microsoft\Windows\\Start Menu\\Programs\\System Tools\\Command Prompt.lnk")
-    elif input1 == "open cmd":
+    elif input1 == "open control panel":
         speak("Opening control panel")
         os.startfile("C:\\Users\\ASUS\\AppData\\Roaming\\Microsoft\Windows\\Start Menu\\Programs\\System Tools\\Control Panel.lnk")
     elif input1 == "open run":
@@ -103,6 +116,7 @@ while True:
         speak("Opening powershell")
         os.startfile("C:\\Users\\ASUS\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Windows PowerShell\Windows PowerShell.lnk")
     elif input1 == "search youtube":
+        speak("Enter the search for youtube")
         input11=input("Enter the search for youtube: ")
         speak("Searching "+input11)
         web("youtube.com/results?search_query="+input11)
@@ -342,6 +356,31 @@ while True:
         root2.close()
         time.sleep(2)
         speak("Succesfully created")
+    elif input1 == "rock paper sccisor":
+        # here I imported the random library
+        rand = random.randint(1, 3)
+        # Here I told the computer to think 1 number to 3 number
+        speak("Enter rock or paper or sccisor")
+        inpu = input("Enter rock or paper or sccisor: ")
+        if (rand == 1 and inpu == "sccisor" or rand == 2 and inpu == "rock" or rand == 3 and inpu == "paper"):
+            speak("Computer Won")
+            # here add computer win function
+        elif (rand == 1 and inpu == "paper" or rand == 2 and inpu == "sccisor" or rand == 3 and inpu == "rock"):
+            speak("user won")
+            # Here I add user win function
+        else:
+            speak("draw")
+            # here I add the draw function
+        if (rand == 1):
+            ad = "rock"
+        elif (rand == 2):
+            ad = "paper"
+        else:
+            ad = "sccisor"
+        time.sleep(2)
+        speak("Computer think number is ", rand, "is", ad)
+    elif input1 == "exit":
+        sys.exit()
     elif input1 == "search wikipedia":
         speak("Enter the word to search")
         input3=input("Enter the word to search: ")
@@ -368,6 +407,21 @@ while True:
         speak(f"the subraction of two number is {a - b}")
         speak(f"the multipltion of two number is {a * b}")
         speak(f"the division of two number is { a / b}")
+    elif input1 == "word length":
+        speak("Enter the word to get the length of the word")
+        input12=input("Enter the word to get the length of the word: ")
+        speak(len(input12))
+    elif input1 == "test passed":
+        var=0
+        for i in range(0,10):
+            var+=1
+            print(bcolors.OKGREEN+ f"✅ test {var} passed")
+            time.sleep(1)
+    elif input1 == "wikipedia":
+        speak("Enter the word to search in wikipeedia")
+        input12=input("Enter the word to search in wikipeedia: ")
+        result=wikipedia.summary(input12,sentences=2)
+        speak(result)
     elif input1 == "search":
         speak("Enter the word to search: ")
         input2=input("Enter the word to search: ")
@@ -377,6 +431,8 @@ while True:
         speak("Hi Muhammad Raiyaan sir")
     elif input1 == "who are you":
         speak("I am Jarvis")
+    elif input1 == "tell me a joke":
+        speak(pyjokes.get_joke())
     else:
         arra=["Sir didn't get try again",f"No result for {input1}"]
         speak(random.choice(arra))
