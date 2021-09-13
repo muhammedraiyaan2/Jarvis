@@ -227,6 +227,9 @@ while True:
     elif input1 == "open tailwind css":
         speak("Opening tailwind css")
         web("tailwindcss.com")
+    elif input1 == "I am sad":
+        speak("Don't worry sir I will open a website for duaa")
+        web("quran.com/3/139?translations=20,85,101")
     elif input1 == "open tailblocks":
         speak("Opening tailblocks")
         web("tailblocks.cc")
@@ -419,7 +422,7 @@ while True:
             time.sleep(1)
     elif input1 == "wikipedia":
         speak("Enter the word to search in wikipeedia")
-        input12=input("Enter the word to search in wikipeedia: ")
+        input12=input("Enter the word to search in wikipedia: ")
         result=wikipedia.summary(input12,sentences=2)
         speak(result)
     elif input1 == "search":
